@@ -13,17 +13,17 @@ import java.util.*;
 public class CSC230SpreadsheetIntegration 
 {
 	
-	public static final String GOOGLE_ACCOUNT_USERNAME = "screamyahualica2";  
-	public static final String GOOGLE_ACCOUNT_PASSWORD = "csc230proj"; 
-	public static final String SPREADSHEET_TITLE = "testws";
-	public static final String WORKSHEET_TITLE = "test1";
+	public static final String GOOGLE_ACCOUNT_USERNAME = "dhanu.gre";  
+	public static final String GOOGLE_ACCOUNT_PASSWORD = "gattu165."; 
+	public static final String SPREADSHEET_TITLE = "avani's spreadsheet";
+	public static final String WORKSHEET_TITLE = "first's trial";
 	
 	public static void main(String[] args)
       throws AuthenticationException, MalformedURLException, IOException, ServiceException 
       {
 
-		System.out.println("Hello Juan! :)");
-		SpreadsheetService service = setUpServiceAuthentication("CSC230 Demo",GOOGLE_ACCOUNT_USERNAME, GOOGLE_ACCOUNT_PASSWORD);
+		System.out.println("Hey Avani! :)");
+		SpreadsheetService service = setUpServiceAuthentication("avani's spreadsheet",GOOGLE_ACCOUNT_USERNAME, GOOGLE_ACCOUNT_PASSWORD);
 		WorksheetEntry creditCardWorksheet = getCreditCardWorksheet(SPREADSHEET_TITLE, WORKSHEET_TITLE,service);
 		if (creditCardWorksheet != null)
 		{
@@ -34,16 +34,16 @@ public class CSC230SpreadsheetIntegration
 			
 			//test - getting attributes from the worksheet
 			System.out.println("Here are the APR for the two cards: ");		
-			System.out.println("wells fargo:" + ": " + getCardEntry(creditCardWorksheet,service,"apr","wells fargo"));
-			System.out.println("capital one:" + ": " + getCardEntry(creditCardWorksheet,service,"apr","capital one"));
+			System.out.println("BOA" + ": " + getCardEntry(creditCardWorksheet,service,"APR","BOA"));
+			System.out.println("Citi:" + ": " + getCardEntry(creditCardWorksheet,service,"APR","Citi"));
 
 			//test - adding a new row to the worksheet
-			//addRowToWorksheet(creditCardWorksheet,service,"home depot","8%","5,672");
+			//addRowToWorksheet(creditCardWorksheet,service,"BOA","900","June");
 			//test: deleting a row
-		//deleteRow(creditCardWorksheet, service, "home depot");
+			//deleteRow(creditCardWorksheet, service, "BOA");
 
 			//test updating an entry
-			updateEntry(creditCardWorksheet,service,"capital one","Balance","$440");
+			//updateEntry(creditCardWorksheet,service,"Citi","1267","440");
 			
 			
 		}
